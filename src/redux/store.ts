@@ -2,10 +2,13 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import thunkMiddleware, {ThunkDispatch} from "redux-thunk";
 import {AnyAction, applyMiddleware, combineReducers, legacy_createStore} from "redux";
 import {appReducer} from "./redusers/app-reducer";
+import {authReducer} from "./redusers/auth-reduser";
 
 
 const rootReducer = combineReducers({
-    app: appReducer
+    app: appReducer,
+    auth: authReducer,
+
 })
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunkMiddleware));
 export type AppRootStateType = ReturnType<typeof rootReducer>
