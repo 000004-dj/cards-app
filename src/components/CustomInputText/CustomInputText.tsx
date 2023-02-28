@@ -5,7 +5,7 @@ import React, {
     KeyboardEvent,
     ReactNode,
 } from 'react'
-import s from './CustomInputText.module.css'
+import s from './CustomInputText.module.scss'
 
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement>

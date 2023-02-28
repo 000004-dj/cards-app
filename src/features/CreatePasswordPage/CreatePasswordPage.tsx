@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./ChangePasswordPage.module.scss"
+import s from "./CreatePasswordPage.module.scss"
 import Grid from '@mui/material/Grid';
 import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
@@ -8,21 +8,24 @@ import Button from '@mui/material/Button';
 import {useFormik} from "formik"
 
 type FormikErrorType = {
-    email?: string
+    password?: string
 }
 
-export const ChangePasswordPage = () => {
+export const CreatePasswordPage = () => {
+
     const formik = useFormik({
         initialValues: {
-            email: '',
+            password: '',
         },
         validate: (values) => {
             const errors: FormikErrorType = {}
-            if (!values.email) {
-                errors.email = 'Required'
-            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-                errors.email = 'Invalid email address'
+
+            if (!values.password) {
+                errors.password = 'Required'
+            } else if (values.password.length < 4) {
+                errors.password = 'Password should be longer'
             }
+
             return errors
         },
         onSubmit: values => {
@@ -31,7 +34,7 @@ export const ChangePasswordPage = () => {
     })
     return (
         <div className={s.blockContainer}>
-            <h2>Forgot your password?</h2>
+            <h2>Create new password</h2>
             <Grid container justifyContent={'center'} className={s.formContainer}>
                 <Grid item justifyContent={'center'}>
                     <form onSubmit={formik.handleSubmit}>
@@ -43,33 +46,27 @@ export const ChangePasswordPage = () => {
                                         shrink: true,
                                     }}
                                     variant="filled"
-                                    type="email"
-                                    label="Email"
+                                    type="password"
+                                    label="Password"
                                     margin="normal"
-                                    {...formik.getFieldProps("email")}
+                                    {...formik.getFieldProps("password")}
                                 />
-                                {formik.errors.email && formik.touched.email
-                                    ?  <div style={{color: "red"}}>{formik.errors.email}</div> : null}
-                                <p className={s.info}>
-                                    Enter your email
-                                    address and we will
-                                    send you further
-                                    instructions
-                                </p>
+                                {formik.errors.password && formik.touched.password
+                                    ?  <div style={{color: "red"}}>{formik.errors.password}</div> : null}
+                                <p className={s.info}>Create new password and we will send you further instructions to email</p>
+
                                 <Button
                                     className={s.submitButton}
                                     type={'submit'}
                                     variant={'contained'}
                                     color={'primary'}>
-                                    Send Instructions
+                                    Create new password
                                 </Button>
                             </FormGroup>
                         </FormControl>
                     </form>
                 </Grid>
             </Grid>
-            <p className={s.toLogin}>Did you remember your password?</p>
-            <p className={s.toSignIn}>Try logging in</p>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import React, {
     DetailedHTMLProps,
     InputHTMLAttributes,
 } from 'react'
-import s from './Checkbox.module.css'
+import s from './Checkbox.module.scss'
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,

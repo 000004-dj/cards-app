@@ -4,7 +4,7 @@ import React, {
     DetailedHTMLProps,
     HTMLAttributes,
 } from 'react'
-import s from './Radio.module.css'
+import s from './Radio.module.scss'
 
 type DefaultRadioPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement>

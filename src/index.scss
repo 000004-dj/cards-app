@@ -12,3 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+//delete background for all inputs from "Material Ui"
+.css-1ff8729-MuiInputBase-root-MuiFilledInput-root{
+  background: none !important;
+}

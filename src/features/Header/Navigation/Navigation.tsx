@@ -1,4 +1,4 @@
-import s from "./Navigation.module.css" ;
+import s from "./Navigation.module.scss" ;
 import React from "react";
 import { NavLink} from "react-router-dom";
 
@@ -28,12 +28,12 @@ export const Navigation = () => {
             <NavLink to={"/changePassword"}
                      className={({isActive}) =>
                          isActive ? s.active : undefined
-                     }>changePassword</NavLink>
+                     }>createNewPassword</NavLink>
 
             <NavLink to={"/createNewPassword"}
                      className={({isActive}) =>
                          isActive ? s.active : undefined
-                     }>createNewPassword</NavLink>
+                     }>changePassword</NavLink>
 
             <NavLink to={"/componentsLibrary"}
                      className={({isActive}) =>

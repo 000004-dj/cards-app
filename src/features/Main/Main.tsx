@@ -4,10 +4,10 @@ import {Login} from "../Login/Login";
 import {Registration} from "../Registration/Registration";
 import {Profile} from "../Profile/Profile";
 import {NotFoundPage} from "../NotFoundPage/NotFoundPage";
-import {ChangePasswordPage} from "../ChangePassword/ChangePasswordPage";
-import {CreateNewPasswordPage} from "../CreateNewPassword/CreateNewPasswordPage";
+import {CreatePasswordPage} from "../CreatePasswordPage/CreatePasswordPage";
 import {ComponentsLibraryPage} from "../ComponentsLibraryPage/ComponentsLibraryPage";
-import s from './Main.module.css'
+import s from './Main.module.scss'
+import {ChangePasswordPage} from "../ChangePassword/ChangePasswordPage";
 
 export const Main = () => {
     return (
@@ -17,8 +17,8 @@ export const Main = () => {
                 <Route path="/registration" element={<Registration/>}/>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/404" element={<NotFoundPage/>}/>
-                <Route path="/changePassword" element={<ChangePasswordPage/>}/>
-                <Route path="/createNewPassword" element={<CreateNewPasswordPage/>}/>
+                <Route path="/changePassword" element={<CreatePasswordPage/>}/>
+                <Route path="/createNewPassword" element={<ChangePasswordPage/>}/>
                 <Route path="/componentsLibrary" element={<ComponentsLibraryPage/>}/>
             </Routes>
         </div>

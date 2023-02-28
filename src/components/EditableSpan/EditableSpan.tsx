@@ -4,7 +4,7 @@ import React, {
     HTMLAttributes,
     useState,
 } from 'react'
-import s from './EditableSpan.module.css'
+import s from './EditableSpan.module.scss'
 import CustomInputText from '../CustomInputText/CustomInputText'
 import editIcon from './editIcon.svg'
 
